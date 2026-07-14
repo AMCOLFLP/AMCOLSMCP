@@ -3,11 +3,105 @@
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>AMCOL - Maritime English | SMCP Interactive Module</title><link href="assets/style.css" rel="stylesheet"/></head>
 <body>
-<header class="topbar"><div class="topbar-inner"><div class="brand"><img alt="AMCOL Logo" src="./assets/logo.png" style="height: 32px; margin-right: 10px; vertical-align: middle;"/><span>AMCOL - Maritime English</span></div><nav class="nav"><a href="index.html">Home</a><a href="assessments.html">Assessments</a><a href="unit-1.html">Unit 1</a><a href="unit-2.html">Unit 2</a><a href="unit-3.html">Unit 3</a><a href="unit-4.html">Unit 4</a><a href="unit-5.html">Unit 5</a><a href="unit-6.html">Unit 6</a><a href="unit-7.html">Unit 7</a><a href="pronunciation-listening.html">Listening Lab</a><a href="common-error-bank.html">Common Errors</a><a href="capstone.html">Capstone</a><a href="teacher-guide.html">Teacher Guide</a><a href="resources.html">Resources</a></nav></div></header>
-<section class="hero"><div class="hero-card"><span class="pill">Asian Maritime Technological College</span><span class="pill">Created by Dr. Wayne</span><h1>AMCOL - Maritime English</h1><p>Asian Maritime Technological Collge - SMCP Module</p><div class="tip" id="new-course-order-note"><p><strong>Updated Course Order:</strong> Unit 1 now introduces the eight SMCP message markers first. Students then apply those markers step by step in routine VHF, emergency communication, pilotage, collision avoidance, mooring/cargo operations, and NAVTEX/weather warnings.</p></div></div></section>
-<main class="layout"><aside class="sidebar"><h3>Course Pages</h3><a class="side-link" href="index.html">Home</a><a class="side-link" href="assessments.html">Combined Assessments: Pre-Test &amp; Post-Test</a><a class="side-link" href="unit-1.html">Unit 1: Foundations of SMCP Message Markers</a><a class="side-link" href="unit-2.html">Unit 2: VHF Fundamentals and Routine Traffic</a><a class="side-link" href="unit-3.html">Unit 3: Distress, Urgency, and Safety Communications</a><a class="side-link" href="unit-4.html">Unit 4: Pilotage and Port Arrival</a><a class="side-link" href="unit-5.html">Unit 5: Vessel-to-Vessel Collision Avoidance</a><a class="side-link" href="unit-6.html">Unit 6: On-Board Operations - Mooring and Cargo</a><a class="side-link" href="unit-7.html">Unit 7: Meteorological and Navigational Warnings</a><a class="side-link" href="pronunciation-listening.html">Listening &amp; Pronunciation Lab</a><a class="side-link" href="common-error-bank.html">Common Error Bank</a><a class="side-link" href="printable-exams.html">Printable Worksheets &amp; Exams</a><a class="side-link" href="capstone.html">Final Capstone Simulation</a><a class="side-link" href="teacher-guide.html">Teacher Guide, Answer Keys &amp; Rubrics</a><a class="side-link" href="resources.html">Appendices &amp; Checklists</a><div class="side-progress"><strong>Study Progress</strong><div class="progressbar"><span></span></div><p class="progress-text">0/7 units completed</p></div><div class="toolbar"><button class="btn ghost" onclick="printPage()">Print / Save PDF</button></div></aside>
+<header class="topbar">
+<div class="topbar-inner">
+<a aria-label="Go to course home" class="brand" href="index.html">
+<img alt="AMCOL Logo" class="brand-logo" src="./assets/logo.png"/>
+<span class="brand-text"><strong>AMCOL Maritime English</strong><small>SMCP Interactive Course</small></span>
+</a>
+<button aria-label="Toggle navigation" class="menu-toggle" onclick="toggleMenu()" type="button">☰ Menu</button>
+<nav aria-label="Main navigation" class="nav compact-nav" id="siteNav">
+<a class="nav-link" href="index.html">Home</a>
+<div class="nav-dropdown" data-group="course">
+<button aria-expanded="false" class="nav-dropbtn" onclick="toggleDropdown(event,this)" type="button">Course <span class="caret">▾</span></button>
+<div class="nav-menu" role="menu">
+<a href="course-map.html" role="menuitem">Course Map &amp; Directory</a>
+<a href="assessments.html" role="menuitem">Pre-Test &amp; Post-Test</a>
+<a href="capstone.html" role="menuitem">Final Capstone Simulation</a>
+<a href="printable-exams.html" role="menuitem">Printable Worksheets &amp; Exams</a>
+</div>
+</div>
+<div class="nav-dropdown" data-group="units">
+<button aria-expanded="false" class="nav-dropbtn" onclick="toggleDropdown(event,this)" type="button">Units <span class="caret">▾</span></button>
+<div class="nav-menu units-menu" role="menu">
+<a href="unit-1.html" role="menuitem"><strong>Unit 1</strong> Foundations of SMCP Markers</a>
+<a href="unit-2.html" role="menuitem"><strong>Unit 2</strong> VHF Routine Traffic</a>
+<a href="unit-3.html" role="menuitem"><strong>Unit 3</strong> Distress, Urgency &amp; Safety</a>
+<a href="unit-4.html" role="menuitem"><strong>Unit 4</strong> Pilotage &amp; Port Arrival</a>
+<a href="unit-5.html" role="menuitem"><strong>Unit 5</strong> Collision Avoidance</a>
+<a href="unit-6.html" role="menuitem"><strong>Unit 6</strong> Mooring &amp; Cargo Operations</a>
+<a href="unit-7.html" role="menuitem"><strong>Unit 7</strong> Weather &amp; Navigational Warnings</a>
+</div>
+</div>
+<div class="nav-dropdown" data-group="practice">
+<button aria-expanded="false" class="nav-dropbtn" onclick="toggleDropdown(event,this)" type="button">Practice <span class="caret">▾</span></button>
+<div class="nav-menu" role="menu">
+<a href="pronunciation-listening.html" role="menuitem">Listening &amp; Pronunciation Lab</a>
+<a href="common-error-bank.html" role="menuitem">Common Error Bank</a>
+<a href="resources.html" role="menuitem">Resources &amp; Appendices</a>
+</div>
+</div>
+<a class="nav-link" href="teacher-guide.html">Teacher Guide</a>
+</nav>
+</div>
+</header>
+<section class="hero"><div class="hero-card"><span class="pill">Asian Maritime Technological College</span><span class="pill">Created by Dr. Wayne</span><h1>AMCOL - Maritime English</h1><p>Asian Maritime Technological College - SMCP Module</p><div class="tip" id="new-course-order-note"><p><strong>Updated Course Order:</strong> Unit 1 now introduces the eight SMCP message markers first. Students then apply those markers step by step in routine VHF, emergency communication, pilotage, collision avoidance, mooring/cargo operations, and NAVTEX/weather warnings.</p></div></div></section>
+<main class="layout"><aside aria-label="Course navigation" class="sidebar">
+<div class="sidebar-card nav-card">
+<div class="sidebar-title-row">
+<h3>Course Navigator</h3>
+<span class="tiny-badge">Offline Ready</span>
+</div>
+<label class="sidebar-search-label" for="courseNavSearch">Find a page</label>
+<input class="sidebar-search" id="courseNavSearch" oninput="filterCourseNav()" placeholder="Search units, lab, guide..."/>
+<div class="nav-section" data-nav-group="start">
+<p class="nav-section-title">Start Here</p>
+<a class="side-link" href="index.html"><span>⌂</span> Home Dashboard</a>
+<a class="side-link" href="course-map.html"><span>☷</span> Course Map &amp; Directory</a>
+<a class="side-link" href="assessments.html"><span>✓</span> Combined Assessments</a>
+</div>
+<div class="nav-section" data-nav-group="units">
+<p class="nav-section-title">Learning Units</p>
+<a class="side-link" href="unit-1.html"><span>01</span> Foundations of SMCP Markers</a>
+<a class="side-link" href="unit-2.html"><span>02</span> VHF Fundamentals &amp; Routine Traffic</a>
+<a class="side-link" href="unit-3.html"><span>03</span> Distress, Urgency &amp; Safety</a>
+<a class="side-link" href="unit-4.html"><span>04</span> Pilotage &amp; Port Arrival</a>
+<a class="side-link" href="unit-5.html"><span>05</span> Collision Avoidance</a>
+<a class="side-link" href="unit-6.html"><span>06</span> Mooring &amp; Cargo Operations</a>
+<a class="side-link" href="unit-7.html"><span>07</span> Weather &amp; Navigational Warnings</a>
+</div>
+<div class="nav-section" data-nav-group="practice">
+<p class="nav-section-title">Practice &amp; Support</p>
+<a class="side-link" href="pronunciation-listening.html"><span>♫</span> Listening &amp; Pronunciation Lab</a>
+<a class="side-link" href="common-error-bank.html"><span>!</span> Common Error Bank</a>
+<a class="side-link" href="printable-exams.html"><span>⎙</span> Printable Worksheets &amp; Exams</a>
+<a class="side-link" href="capstone.html"><span>★</span> Final Capstone Simulation</a>
+<a class="side-link" href="teacher-guide.html"><span>☑</span> Teacher Guide &amp; Rubrics</a>
+<a class="side-link" href="resources.html"><span>↗</span> Resources &amp; Appendices</a>
+</div>
+</div>
+<div class="sidebar-card side-progress">
+<strong>Study Progress</strong>
+<div class="progressbar"><span></span></div>
+<p class="progress-text">0/7 units completed</p>
+</div>
+<div class="sidebar-card quick-tools">
+<button class="btn ghost full" onclick="printPage()">Print / Save PDF</button>
+<a class="btn gold full" href="course-map.html">Open Course Map</a>
+</div>
+</aside>
 <article class="content"><div class="toolbar"><input class="searchbox" id="pageSearch" oninput="searchPage()" placeholder="Search within this page..."/></div>
-<h1>Welcome to the Maritime English SMCP Interactive Course</h1><div class="home-actions"><a class="btn gold" href="assessments.html">Open Combined Pre-Test &amp; Post-Test</a><a class="btn ghost" href="unit-1.html">Start Unit 1: Message Markers</a><a class="btn ghost" href="pronunciation-listening.html">Listening &amp; Pronunciation Lab</a><a class="btn ghost" href="teacher-guide.html">Teacher Guide</a></div>
+<h1>Welcome to the Maritime English SMCP Interactive Course</h1><div class="home-actions"><a class="btn gold" href="assessments.html">Open Combined Pre-Test &amp; Post-Test</a><a class="btn ghost" href="course-map.html">Open Course Map</a><a class="btn ghost" href="unit-1.html">Start Unit 1: Message Markers</a><a class="btn ghost" href="pronunciation-listening.html">Listening &amp; Pronunciation Lab</a><a class="btn ghost" href="teacher-guide.html">Teacher Guide</a></div>
+<section class="lesson-section" id="modern-dashboard">
+<h2>Quick Start Dashboard</h2>
+<div class="unit-grid">
+<a class="unit-card" href="unit-1.html"><h3>Start the Course</h3><p>Begin with the foundations of all 8 SMCP message markers.</p></a>
+<a class="unit-card" href="assessments.html"><h3>Assess Students</h3><p>Open the combined pre-test and post-test page.</p></a>
+<a class="unit-card" href="pronunciation-listening.html"><h3>Use the Audio Lab</h3><p>Practise number reading, phonetic spelling, and VHF listening scripts.</p></a>
+<a class="unit-card" href="course-map.html"><h3>Find Any Page</h3><p>Use the full course directory for faster navigation.</p></a>
+</div>
+</section>
+
 <p>This interactive training module is designed for deck maritime students to develop proficiency in the IMO Standard Marine Communication Phrases (SMCP). The course provides comprehensive, practical instruction for clear and effective communication in real-world maritime operations, including bridge, port, and shipboard scenarios.</p>
 <p>Each unit delivers essential vocabulary, expanded grammar instruction, student-friendly grammar discussion, and the correct application of SMCP message markers. Through realistic conversations, interactive exercises, and role-play scenarios, students will practice and master the standardized language required for safe navigation and operational efficiency.</p>
 <div class="tip">
@@ -31,4 +125,9 @@
 </div>
 </section>
 </article></main>
-<script src="assets/app.js"></script></body></html>
+<script src="assets/app.js"></script>
+<div aria-label="Quick tools" class="floating-tools">
+<button class="float-btn" onclick="scrollToTop()" title="Back to top" type="button">↑</button>
+<a class="float-btn" href="course-map.html" title="Course map">☷</a>
+</div>
+</body></html>

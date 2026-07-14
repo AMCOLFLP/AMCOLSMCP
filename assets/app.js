@@ -1,4 +1,71 @@
 
+function toggleMenu(){
+  const nav=document.getElementById('siteNav');
+  if(nav) nav.classList.toggle('open');
+}
+function toggleDropdown(event,btn){
+  event.preventDefault();
+  const dropdown=btn.closest('.nav-dropdown');
+  if(!dropdown) return;
+  document.querySelectorAll('.nav-dropdown.open').forEach(dd=>{
+    if(dd!==dropdown){ dd.classList.remove('open'); const b=dd.querySelector('.nav-dropbtn'); if(b) b.setAttribute('aria-expanded','false'); }
+  });
+  const open=dropdown.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click',event=>{
+  if(!event.target.closest('.nav-dropdown')){
+    document.querySelectorAll('.nav-dropdown.open').forEach(dd=>{
+      dd.classList.remove('open');
+      const btn=dd.querySelector('.nav-dropbtn');
+      if(btn) btn.setAttribute('aria-expanded','false');
+    });
+  }
+});
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+function currentFile(){
+  const name=(location.pathname.split('/').pop()||'index.html');
+  return name===''?'index.html':name;
+}
+function activateCurrentLinks(){
+  const file=currentFile();
+  document.querySelectorAll('.nav a,.side-link').forEach(a=>{
+    const href=(a.getAttribute('href')||'').split('#')[0];
+    if(href===file){
+      a.classList.add('active');
+      const dd=a.closest('.nav-dropdown');
+      if(dd){ const btn=dd.querySelector('.nav-dropbtn'); if(btn) btn.classList.add('active'); }
+    }
+  });
+}
+function filterCourseNav(){
+  const input=document.getElementById('courseNavSearch');
+  if(!input) return;
+  const q=norm(input.value);
+  document.querySelectorAll('.side-link').forEach(link=>{
+    const hit=!q || norm(link.innerText).includes(q);
+    link.classList.toggle('is-hidden', !hit);
+  });
+  document.querySelectorAll('.nav-section').forEach(section=>{
+    const any=[...section.querySelectorAll('.side-link')].some(a=>!a.classList.contains('is-hidden'));
+    section.style.display=any?'':'none';
+  });
+}
+function enhancePageChrome(){
+  const article=document.querySelector('article.content');
+  if(!article || article.querySelector('.breadcrumb')) return;
+  const file=currentFile();
+  const title=(document.querySelector('.hero h1')||document.querySelector('h1'))?.textContent?.trim()||document.title;
+  const bc=document.createElement('nav');
+  bc.className='breadcrumb';
+  bc.innerHTML=`<a href="index.html">Home</a><span>›</span><strong>${title}</strong>`;
+  const toolbar=article.querySelector('.toolbar');
+  if(toolbar && toolbar.nextSibling){ toolbar.parentNode.insertBefore(bc, toolbar.nextSibling); }
+  else { article.insertBefore(bc, article.firstChild); }
+}
+document.addEventListener('DOMContentLoaded',()=>{activateCurrentLinks(); enhancePageChrome();});
+
+
 function norm(s){return (s||'').toLowerCase().replace(/[.?!,;]/g,'').replace(/\s+/g,' ').trim();}
 function checkFill(unit){
   const card=document.querySelector(`[data-fill-unit="${unit}"]`);
