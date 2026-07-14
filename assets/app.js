@@ -81,4 +81,22 @@ function searchPage(){
     if(!norm(sec.innerText).includes(q)) sec.classList.add('hidden');
   });
 }
-document.addEventListener('DOMContentLoaded', updateProgress);
+function shuffleSelectOptions(){
+  document.querySelectorAll('[data-match-unit]').forEach(card => {
+    card.querySelectorAll('select').forEach(select => {
+      const options = Array.from(select.querySelectorAll('option'));
+      const firstOption = options.shift(); // Keep "Choose..." at the top
+      for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+      }
+      select.innerHTML = '';
+      select.appendChild(firstOption);
+      options.forEach(opt => select.appendChild(opt));
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  updateProgress();
+  shuffleSelectOptions();
+});
