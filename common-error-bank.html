@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Common Error Bank | SMCP Interactive Module</title><link href="assets/style.css" rel="stylesheet"/></head>
-<body>
+<title>Common Error Bank | SMCP Interactive Module</title><link href="assets/style.css" rel="stylesheet"/><meta content="#071a33" name="theme-color"/></head>
+<body data-page="common-error-bank.html"><a class="skip-link" href="#mainContent">Skip to main content</a>
 <header class="topbar">
 <div class="topbar-inner">
 <a aria-label="Go to course home" class="brand" href="index.html">
 <img alt="AMCOL Logo" class="brand-logo" src="./assets/logo.png"/>
 <span class="brand-text"><strong>AMCOL Maritime English</strong><small>SMCP Interactive Course</small></span>
 </a>
+<button aria-controls="courseSidebar" aria-label="Hide Course Navigator" aria-pressed="false" class="sidebar-toggle" id="sidebarToggle" title="Show or hide Course Navigator" type="button"><span aria-hidden="true">☰</span><span class="sidebar-toggle-label">Navigator</span></button>
 <button aria-label="Toggle navigation" class="menu-toggle" onclick="toggleMenu()" type="button">☰ Menu</button>
 <nav aria-label="Main navigation" class="nav compact-nav" id="siteNav">
 <a class="nav-link" href="index.html">Home</a>
@@ -46,11 +46,11 @@
 </div>
 </header>
 <section class="hero"><div class="hero-card"><span class="pill">Asian Maritime Technological College</span><span class="pill">Created by Dr. Wayne</span><h1>Common Error Bank</h1><p>Risky English converted into standard SMCP-style communication.</p></div></section>
-<main class="layout"><aside aria-label="Course navigation" class="sidebar">
+<main class="layout" id="mainContent"><aside aria-label="Course navigation" class="sidebar" id="courseSidebar">
 <div class="sidebar-card nav-card">
 <div class="sidebar-title-row">
 <h3>Course Navigator</h3>
-<span class="tiny-badge">Offline Ready</span>
+<span class="tiny-badge">Course Menu</span>
 </div>
 <label class="sidebar-search-label" for="courseNavSearch">Find a page</label>
 <input class="sidebar-search" id="courseNavSearch" oninput="filterCourseNav()" placeholder="Search units, lab, guide..."/>
@@ -97,7 +97,7 @@
 <div class="exercise-zone"><div class="exercise-card" data-minwords="100" data-scenario-unit="error" id="error-writing"><h3>Error Correction Challenge</h3><p>Choose five risky phrases from the table. Write a short corrected VHF/onboard conversation using the standard phrases.</p><textarea></textarea><div class="checks"><div class="check-pill" data-keyword="Instruction">Instruction</div><div class="check-pill" data-keyword="Information">Information</div><div class="check-pill" data-keyword="Warning">Warning</div><div class="check-pill" data-keyword="Question">Question</div><div class="check-pill" data-keyword="Answer">Answer</div></div><div class="btnrow"><button class="btn gold" onclick="analyzeScenario('error')">Analyze</button><button class="btn ghost" onclick="resetCard('error-writing')">Reset</button></div><div class="feedback"></div></div></div>
 <div class="page-nav"><a href="pronunciation-listening.html">← Listening Lab</a><a class="next" href="printable-exams.html">Printable Exams →</a></div>
 </article></main>
-<script src="assets/app.js"></script>
+<script src="assets/thai-support.js"></script><script src="assets/portal.js"></script><script src="assets/app.js"></script>
 <div aria-label="Quick tools" class="floating-tools">
 <button class="float-btn" onclick="scrollToTop()" title="Back to top" type="button">↑</button>
 <a class="float-btn" href="course-map.html" title="Course map">☷</a>

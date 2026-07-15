@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Course Map &amp; Directory | SMCP Interactive Module</title><link href="assets/style.css" rel="stylesheet"/></head>
-<body>
+<title>Course Map &amp; Directory | SMCP Interactive Module</title><link href="assets/style.css" rel="stylesheet"/><meta content="#071a33" name="theme-color"/></head>
+<body data-page="course-map.html"><a class="skip-link" href="#mainContent">Skip to main content</a>
 <header class="topbar">
 <div class="topbar-inner">
 <a aria-label="Go to course home" class="brand" href="index.html">
 <img alt="AMCOL Logo" class="brand-logo" src="./assets/logo.png"/>
 <span class="brand-text"><strong>AMCOL Maritime English</strong><small>SMCP Interactive Course</small></span>
 </a>
+<button aria-controls="courseSidebar" aria-label="Hide Course Navigator" aria-pressed="false" class="sidebar-toggle" id="sidebarToggle" title="Show or hide Course Navigator" type="button"><span aria-hidden="true">☰</span><span class="sidebar-toggle-label">Navigator</span></button>
 <button aria-label="Toggle navigation" class="menu-toggle" onclick="toggleMenu()" type="button">☰ Menu</button>
 <nav aria-label="Main navigation" class="nav compact-nav" id="siteNav">
 <a class="nav-link" href="index.html">Home</a>
@@ -46,11 +46,11 @@
 </div>
 </header>
 <section class="hero"><div class="hero-card"><span class="pill">Modern Navigation</span><span class="pill">Complete Directory</span><h1>Course Map &amp; Directory</h1><p>Quick access to every unit, assessment, audio lab, printable resource, capstone task, and teacher support page.</p></div></section>
-<main class="layout"><aside aria-label="Course navigation" class="sidebar">
+<main class="layout" id="mainContent"><aside aria-label="Course navigation" class="sidebar" id="courseSidebar">
 <div class="sidebar-card nav-card">
 <div class="sidebar-title-row">
 <h3>Course Navigator</h3>
-<span class="tiny-badge">Offline Ready</span>
+<span class="tiny-badge">Course Menu</span>
 </div>
 <label class="sidebar-search-label" for="courseNavSearch">Find a page</label>
 <input class="sidebar-search" id="courseNavSearch" oninput="filterCourseNav()" placeholder="Search units, lab, guide..."/>
@@ -109,7 +109,7 @@
 <section class="directory-panel"><h2>Teacher &amp; Reference</h2><a class="directory-link" href="teacher-guide.html"><span>☑</span><strong>Teacher Guide, Answer Keys &amp; Rubrics</strong><small>Scoring support, speaking rubric, feedback points, and answer guidance.</small></a><a class="directory-link" href="resources.html"><span>↗</span><strong>Resources &amp; Appendices</strong><small>Pronunciation list, final reflection, checklist, and support links.</small></a></section>
 </div>
 </article></main>
-<script src="assets/app.js"></script>
+<script src="assets/thai-support.js"></script><script src="assets/portal.js"></script><script src="assets/app.js"></script>
 <div aria-label="Quick tools" class="floating-tools">
 <button class="float-btn" onclick="scrollToTop()" title="Back to top" type="button">↑</button>
 <a class="float-btn" href="course-map.html" title="Course map">☷</a>
