@@ -57,7 +57,13 @@ window.togglePasswordVisibility=function(){
   if(!input) return;
   const show=input.type==='password'; input.type=show?'text':'password'; if(btn)btn.textContent=show?'Hide':'Show';
 };
-window.portalLogout=function(){localStorage.removeItem(SESSION_KEY);location.replace('login.html');};
+window.portalLogout=function(){
+  try{
+    localStorage.removeItem(SESSION_KEY);
+    sessionStorage.removeItem('smcp_access_notice');
+  }catch(e){}
+  location.replace('login.html');
+};
 
 function guard(){
   const file=fileName();
@@ -68,7 +74,7 @@ function guard(){
     location.replace(`login.html?next=${next}`);
     return false;
   }
-  if(session.role==='student'&&!STUDENT_PAGES.includes(file)){
+  if(session.role==='student'&&!STUDENT_PAGES.includes(file)&&!/^unit-[1-7](?:-[a-z-]+)?\.html$/i.test(file)){
     sessionStorage.setItem('smcp_access_notice','That page is reserved for teachers and administrators.');
     location.replace('index.html');
     return false;
@@ -83,8 +89,11 @@ function renderUserTools(session){
   if(!inner||inner.querySelector('.portal-user-tools')) return;
   const tools=document.createElement('div');
   tools.className='portal-user-tools';
-  tools.innerHTML=`<button class="thai-toggle" id="thaiToggle" type="button" aria-pressed="false" title="Show or hide contextual Thai explanations"><span>TH</span><strong>Thai Assist</strong></button><div class="portal-user-chip"><span class="portal-avatar">${session.role==='admin'?'A':session.role==='teacher'?'T':'S'}</span><div><strong>${session.displayName}</strong><small>${roleLabel(session.role)}</small></div></div><button class="portal-logout" type="button" onclick="portalLogout()">Log out</button>`;
+  tools.setAttribute('aria-label','Account and language controls');
+  tools.innerHTML=`<button class="thai-toggle" id="thaiToggle" type="button" aria-pressed="false" title="Show or hide contextual Thai explanations"><span>TH</span><strong>Thai Assist</strong></button><div class="portal-user-chip" role="status" aria-label="Signed in as ${session.displayName}, ${roleLabel(session.role)}" title="Signed in as ${session.displayName} (${roleLabel(session.role)})"><span class="portal-avatar" aria-hidden="true">${session.role==='admin'?'A':session.role==='teacher'?'T':'S'}</span><div><span class="portal-signed-in">Signed in</span><strong>${session.displayName}</strong><small>${roleLabel(session.role)}</small></div></div><button class="portal-logout" id="portalLogoutBtn" type="button" aria-label="Log out of the AMCOL SMCP portal" title="Log out"><span class="portal-logout-icon" aria-hidden="true">↪</span><span class="portal-logout-label">Log out</span></button>`;
   inner.appendChild(tools);
+  const logoutButton=tools.querySelector('#portalLogoutBtn');
+  if(logoutButton) logoutButton.addEventListener('click',window.portalLogout);
 }
 function applyRoleAccess(session){
   document.body.classList.add(`role-${session.role}`);

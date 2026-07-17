@@ -31,7 +31,8 @@ function activateCurrentLinks(){
   const file=currentFile();
   document.querySelectorAll('.nav a,.side-link').forEach(a=>{
     const href=(a.getAttribute('href')||'').split('#')[0];
-    if(href===file){
+    const normalizedFile=(file.match(/^unit-(\d)(?:-[a-z-]+)?\.html$/i)||[])[1]?`unit-${(file.match(/^unit-(\d)/i)||[])[1]}.html`:file;
+    if(href===file || href===normalizedFile){
       a.classList.add('active');
       const dd=a.closest('.nav-dropdown');
       if(dd){ const btn=dd.querySelector('.nav-dropbtn'); if(btn) btn.classList.add('active'); }
@@ -287,13 +288,13 @@ function checkSelfAssessment(id){
   }
 
   function unitNumber(){
-    const m=(document.body.dataset.page||location.pathname).match(/unit-(\d)\.html/i);
+    const m=(document.body.dataset.page||location.pathname).match(/unit-(\d)(?:-[a-z-]+)?\.html/i);
     return m?Number(m[1]):0;
   }
 
   function setupUnitNavigation(){
     const unit=unitNumber();
-    if(!unit) return;
+    if(!unit || document.body.classList.contains('unit-section-page')) return;
     const article=document.querySelector('article.content');
     const lesson=document.getElementById('editableLessonContent');
     if(!article||!lesson||article.querySelector('.unit-quick-nav')) return;
@@ -384,10 +385,60 @@ function checkSelfAssessment(id){
     });
   }
 
+
+
+  function setupVisualLightbox(){
+    const links=[...document.querySelectorAll('[data-visual-lightbox]')];
+    if(!links.length) return;
+    let layer=document.getElementById('visualLightbox');
+    if(!layer){
+      layer=document.createElement('div');
+      layer.id='visualLightbox'; layer.className='visual-lightbox'; layer.hidden=true;
+      layer.innerHTML=`<div class="visual-lightbox-backdrop" data-close-visual></div><section class="visual-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="visualLightboxTitle"><div class="visual-lightbox-head"><strong id="visualLightboxTitle">Visual guide</strong><button class="visual-lightbox-close" type="button" aria-label="Close visual guide">×</button></div><div class="visual-lightbox-body"><img alt=""/></div></section>`;
+      document.body.appendChild(layer);
+      layer.querySelectorAll('[data-close-visual],.visual-lightbox-close').forEach(el=>el.addEventListener('click',closeVisual));
+    }
+    let returnFocus=null;
+    function closeVisual(){
+      if(layer.hidden) return;
+      layer.hidden=true; document.body.classList.remove('visual-lightbox-open');
+      if(returnFocus&&document.contains(returnFocus)) returnFocus.focus();
+    }
+    links.forEach(link=>link.addEventListener('click',event=>{
+      event.preventDefault(); returnFocus=link;
+      const img=layer.querySelector('img');
+      img.src=link.getAttribute('href');
+      img.alt=link.querySelector('img')?.alt||link.dataset.visualTitle||'Visual guide';
+      layer.querySelector('#visualLightboxTitle').textContent=link.dataset.visualTitle||img.alt;
+      layer.hidden=false; document.body.classList.add('visual-lightbox-open');
+      requestAnimationFrame(()=>layer.querySelector('.visual-lightbox-close').focus());
+    }));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!layer.hidden) closeVisual();});
+  }
+
+  function setupUnitReadingProgress(){
+    if(!unitNumber()) return;
+    const article=document.querySelector('article.content');
+    if(!article) return;
+    const bar=document.createElement('div');
+    bar.className='unit-reading-progress'; bar.setAttribute('aria-hidden','true'); bar.innerHTML='<span></span>';
+    document.body.appendChild(bar);
+    const fill=bar.firstElementChild;
+    const update=()=>{
+      const rect=article.getBoundingClientRect();
+      const total=Math.max(1,article.scrollHeight-window.innerHeight*.6);
+      const read=Math.min(total,Math.max(0,-rect.top+window.innerHeight*.2));
+      fill.style.width=`${Math.min(100,Math.max(0,(read/total)*100))}%`;
+    };
+    update(); addEventListener('scroll',update,{passive:true}); addEventListener('resize',update);
+  }
+
   document.addEventListener('DOMContentLoaded',()=>{
     setupCourseNavigator();
     setupUnitNavigation();
     setupAudioFeedback();
+    setupVisualLightbox();
+    setupUnitReadingProgress();
     setupKeyboardNavigation();
   });
 })();

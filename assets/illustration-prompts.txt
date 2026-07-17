@@ -1,0 +1,44 @@
+AMCOL SMCP ILLUSTRATION PROMPTS
+Use navy blue, gold, white, clear educational typography, 16:9, professional maritime training style.
+
+UNIT 1 INFOGRAPHIC — unit1_markers_infographic.png
+Create a clean educational maritime infographic titled “The 8 SMCP Message Markers at a Glance”. Include: INSTRUCTION: Required action; ADVICE: Recommended safe action; WARNING: Immediate danger; INFORMATION: Fact or status; QUESTION: Ask one exact point; ANSWER: Direct response; REQUEST: Assistance or permission; INTENTION: Planned action. Use modern icons, clear labels, navy/gold palette, 16:9 layout, no clutter.
+
+UNIT 1 COMIC — unit1_markers_comic.png
+Create a four-panel educational maritime comic titled “Wrong Call vs Correct SMCP Call”. Panels: Unclear call — “Move away. I am coming.”; Confusion — The receiving officer cannot identify the purpose.; Correction — Senior officer: “State the message marker first.”; Clear SMCP — “INTENTION. I will alter course to starboard.”. Discussion focus: Notice how the marker changes the listener’s understanding before the details are spoken. Use realistic maritime uniforms and operational settings, navy/gold palette, readable speech bubbles, 16:9 layout.
+
+UNIT 2 INFOGRAPHIC — unit2_vhf_infographic.png
+Create a clean educational maritime infographic titled “VHF Routine Communication Flow”. Include: 1: Call the station; 2: Identify own vessel; 3: Move to working channel; 4: Use the correct marker; 5: Give exact information; 6: Confirm or answer; 7: Close with Over or Out. Use modern icons, clear labels, navy/gold palette, 16:9 layout, no clutter.
+
+UNIT 2 COMIC — unit2_vhf_comic.png
+Create a four-panel educational maritime comic titled “Routine Radio Check on VHF”. Panels: Initial call — “Rayong VTS, this is MV Andaman Spirit.”; Station reply — “Andaman Spirit, Rayong VTS. Go ahead.”; Radio check — “REQUEST. How do you read me?”; Correct report — “Readability is five. Out.”. Discussion focus: Follow the order: call, identify, state purpose, exchange information, and close correctly. Use realistic maritime uniforms and operational settings, navy/gold palette, readable speech bubbles, 16:9 layout.
+
+UNIT 3 INFOGRAPHIC — unit3_alert_system_infographic.png
+Create a clean educational maritime infographic titled “The 3-Tier Maritime Alert System”. Include: MAYDAY: Grave and imminent danger; PAN-PAN: Urgent safety problem; SECURITE: Safety or navigation warning. Use modern icons, clear labels, navy/gold palette, 16:9 layout, no clutter.
+
+UNIT 3 COMIC — unit3_alert_system_comic.png
+Create a four-panel educational maritime comic titled “Engine Room Fire: Which Alert Should Be Used?”. Panels: Detection — Smoke and fire are reported in the engine room.; Assessment — The master checks whether life and vessel are in grave danger.; Decision — Fire is uncontrolled and spreading: MAYDAY is required.; Broadcast — “MAYDAY… fire in engine room… require immediate assistance.”. Discussion focus: Classification comes before wording. The alert level must match the actual danger. Use realistic maritime uniforms and operational settings, navy/gold palette, readable speech bubbles, 16:9 layout.
+
+UNIT 4 INFOGRAPHIC — unit4_pilotage_infographic.png
+Create a clean educational maritime infographic titled “Pilotage and Port Arrival Sequence”. Include: 1: Contact pilot station; 2: Prepare pilot ladder; 3: Pilot boards; 4: Master–pilot exchange; 5: Helm and engine orders; 6: Safe approach to berth. Use modern icons, clear labels, navy/gold palette, 16:9 layout, no clutter.
+
+UNIT 4 COMIC — unit4_pilotage_comic.png
+Create a four-panel educational maritime comic titled “Pilot on Board”. Panels: Pilot boat — Pilot boat approaches the lee side.; Boarding — Pilot ladder is rigged at the instructed height.; Bridge exchange — Master and pilot confirm the passage plan.; Read-back — “Port ten.” — “Port ten.”. Discussion focus: Side, height, course, speed, and read-back must be exact during restricted-water operations. Use realistic maritime uniforms and operational settings, navy/gold palette, readable speech bubbles, 16:9 layout.
+
+UNIT 5 INFOGRAPHIC — unit5_collision_infographic.png
+Create a clean educational maritime infographic titled “Radar-to-Speech and Encounter Awareness”. Include: BEARING: Where the target is; RANGE: Distance to target; CPA: Closest predicted distance; TCPA: Time until CPA; ENCOUNTER: Head-on / crossing / overtaking; INTENTION: Planned avoiding action. Use modern icons, clear labels, navy/gold palette, 16:9 layout, no clutter.
+
+UNIT 5 COMIC — unit5_collision_comic.png
+Create a four-panel educational maritime comic titled “Close-Quarters Situation Between Two Vessels”. Panels: Detection — OOW detects a steady bearing and decreasing range.; Assessment — CPA zero decimal three miles; TCPA twelve minutes.; VHF clarification — “QUESTION. What are your intentions?”; Safe action — “INTENTION. I will alter course to starboard.”. Discussion focus: Use measurable radar information. VHF clarification supports—but never replaces—COLREG action. Use realistic maritime uniforms and operational settings, navy/gold palette, readable speech bubbles, 16:9 layout.
+
+UNIT 6 INFOGRAPHIC — unit6_mooring_infographic.png
+Create a clean educational maritime infographic titled “Closed-Loop Communication in Mooring and Cargo”. Include: 1: Order given; 2: Order repeated back; 3: Sender confirms; 4: Action carried out; 5: Completion reported. Use modern icons, clear labels, navy/gold palette, 16:9 layout, no clutter.
+
+UNIT 6 COMIC — unit6_mooring_comic.png
+Create a four-panel educational maritime comic titled “Mooring Line Tension Misunderstanding”. Panels: Weak order — “Do something with that line.”; Wrong action — The crew begins heaving the wrong line.; Correction — “INSTRUCTION. Slack away the aft spring.”; Closed loop — “Slacking aft spring.” — “Correct.”. Discussion focus: The loop is complete only after order, read-back, action, and status report. Use realistic maritime uniforms and operational settings, navy/gold palette, readable speech bubbles, 16:9 layout.
+
+UNIT 7 INFOGRAPHIC — unit7_navtex_infographic.png
+Create a clean educational maritime infographic titled “How to Read a NAVTEX Message”. Include: STATION ID: Origin of message; CATEGORY: Type of warning; TIME: Date and UTC group; POSITION: Exact hazard location; HAZARD: Weather or navigation risk; ACTION: Advice or operational response. Use modern icons, clear labels, navy/gold palette, 16:9 layout, no clutter.
+
+UNIT 7 COMIC — unit7_navtex_comic.png
+Create a four-panel educational maritime comic titled “Warning Received – Action Taken”. Panels: Receive — A navigational warning appears on NAVTEX.; Decode — Officer identifies time, position, hazard, and movement.; Inform — The master and bridge team review the warning.; Act — Route and watchkeeping precautions are adjusted.. Discussion focus: Preserve the original facts: source, time, position, hazard, movement, and advice. Use realistic maritime uniforms and operational settings, navy/gold palette, readable speech bubbles, 16:9 layout.
