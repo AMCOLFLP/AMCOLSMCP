@@ -50,3 +50,28 @@ ROLE ACCESS
 
 SECURITY NOTE
 This is an offline classroom prototype. Public institutional deployment requires secure server-side authentication, a database, and server-side authorization.
+
+
+PROFILE AND LOGOUT VISIBILITY
+- The signed-in account indicator now uses a high-contrast navy profile card with the user name and role.
+- The Log out control now uses a clearly labeled red-accent button and remains visible on desktop, tablet, and mobile layouts.
+- Logout clears the active portal session and returns the user to login.html.
+
+
+VISUAL LEARNING EDITION
+- Every unit now opens with a visual overview card and quick Start / Grammar / Conversation / Audio / Check buttons.
+- Every unit includes one infographic and one comic-style scenario.
+- Click any visual to open a full-screen accessible lightbox.
+- The home page and Course Map include visual unit directories.
+- The detailed English, Thai Assist, audio, progress tracking, roles, and post-test lock remain available.
+
+ILLUSTRATION ASSETS
+The included PNG and SVG files are production-ready visual guides. They can be replaced later with custom artwork using the same filenames. The complete prompt list is stored in assets/illustration-prompts.txt.
+
+
+PAGINATED UNIT LESSONS
+- Each unit is divided into seven short pages: Overview, Vocabulary, Grammar, SMCP Language, Conversation & Audio, Core Feature & Scenario, and Practice & Check.
+- Use the compact page tabs or the Previous Page / Next Page buttons.
+- Unit pages use a full-width lesson layout; the large Course Navigator sidebar is removed from unit lessons.
+- The final Practice & Check page contains the Mark Unit Complete button.
+- Existing unit links continue to open the Overview page.
